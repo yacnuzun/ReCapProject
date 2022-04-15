@@ -1,9 +1,11 @@
 ﻿using Business.Concrete;
 using DataAccess.Concrete;
+using Entities.Concrete;
+
 
 CarManager carManager = new CarManager(new EfCarDal());
-foreach (var car in carManager.GetAll())
+
+foreach (var cars in carManager.GetAll())
 {
-    Console.WriteLine(car.CarName);
+    Console.WriteLine(cars.CarName);
 }
-Console.WriteLine("hello");
