@@ -6,4 +6,3 @@ foreach (var car in carManager.GetAll())
 {
     Console.WriteLine(car.CarName);
 }
-Console.WriteLine("hello");
