@@ -2,7 +2,7 @@
 using DataAccess.Concrete;
 
 CarManager carManager = new CarManager(new EfCarDal());
-foreach (var car in carManager.GetAll())
+foreach (var cardt in carManager.GetProductDetail())
 {
-    Console.WriteLine(car.CarName);
+    Console.WriteLine(cardt.CarName+cardt.ColorName+cardt.BrandName+cardt.DailyPrice);
 }
