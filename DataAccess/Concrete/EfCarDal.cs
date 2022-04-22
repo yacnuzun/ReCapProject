@@ -25,7 +25,10 @@ namespace DataAccess.Concrete
                              on c.ColorId equals co.ColorId
                              select new CarDetailDto()
                              {
-                                 CarName = c.CarName,BrandName = b.BrandName,ColorName = co.ColorName,DailyPrice = c.DailyPrice
+                                 CarName = c.CarName,
+                                 BrandName = b.BrandName,
+                                 ColorName = co.ColorName,
+                                 DailyPrice = c.DailyPrice
                              };
                 return result.ToList();
             }
