@@ -18,9 +18,14 @@ namespace Business.Concrete
         public IResult Add(Rental rental)
         {
 
-            _rentalDal.Add(rental);
-            return new SuccesResult(Messages.RentalAdded);
+            if (!((rental.ReturnDate).Year).Equals(0001))
+            {
+                _rentalDal.Add(rental);
+                return new SuccesResult(Messages.RentalAdded);
+                
+            }
 
+            return new ErrorResult("Araç kiralanamaz");
 
         }
 
