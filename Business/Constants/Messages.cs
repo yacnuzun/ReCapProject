@@ -14,5 +14,10 @@ namespace Business.Constants
 
         public static string CarNameInvalid = "Araba İsim Formatına Uymuyor";
         public static object CarsListed;
+        internal static string CustomerAdded;
+        internal static string BrandAdded;
+        internal static string ColorAdded;
+        internal static string RentalAdded;
+        internal static string UserAdded;
     }
 }
