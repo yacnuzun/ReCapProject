@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DataAccess.Migrations
 {
     [DbContext(typeof(ReCapDbContext))]
-    [Migration("20220422161012_bir")]
-    partial class bir
+    [Migration("20220426115012_Database updated")]
+    partial class Databaseupdated
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

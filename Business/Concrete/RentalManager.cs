@@ -18,14 +18,15 @@ namespace Business.Concrete
         public IResult Add(Rental rental)
         {
 
-            if (!((rental.ReturnDate).Year).Equals(0001))
+            if (rental.ReturnDate==null)
             {
-                _rentalDal.Add(rental);
-                return new SuccesResult(Messages.RentalAdded);
                 
+                return new ErrorResult("Araç kiralanamaz");
+
             }
 
-            return new ErrorResult("Araç kiralanamaz");
+            _rentalDal.Add(rental);
+            return new SuccesResult(Messages.RentalAdded);
 
         }
 
