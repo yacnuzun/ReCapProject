@@ -46,4 +46,5 @@ namespace Business.Concrete
             return new SuccesResult("Marka Güncellendi");
         }
     }
+    
 }
