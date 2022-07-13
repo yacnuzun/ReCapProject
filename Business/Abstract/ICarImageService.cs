@@ -11,6 +11,7 @@ namespace Business.Abstract
 {
     public interface ICarImageService
     {
+<<<<<<< HEAD
         IDataResult<List<CarImage>> GetAll();
         IDataResult<CarImage> GetById(int id);
         IDataResult<List<CarImage>> GetByAllCarId(int id);
@@ -18,6 +19,14 @@ namespace Business.Abstract
         IResult Add(IFormFile file,CarImage carImage);
         IResult Update(IFormFile file, CarImage carImage);
         IResult Delete(CarImage carImage);
+=======
+        IResult Add(IFormFile file, CarImage carImage);
+        IResult Update(IFormFile file, CarImage carImage);
+        IResult Delete(CarImage carImage);
+        IDataResult<List<CarImage>> GetAll();
+        IDataResult<CarImage> GetById(int id);
+        IDataResult<List<CarImage>> GetAllByCarId(int id);
+>>>>>>> dd5bef6f54cc9747dc2eec951cfb38825296948a
 
     }
 }
