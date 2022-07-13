@@ -2,9 +2,9 @@
 using Business.Constants;
 using Business.ValidationRules;
 using Core.Aspects.Autofac.Validation;
+using Core.Entities.Concrete;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
-using Entities.Concrete;
 
 namespace Business.Concrete
 {
@@ -18,11 +18,10 @@ namespace Business.Concrete
         }
         [ValidationAspect(typeof(UserValidator))]
 
-        public IResult Add(User user)
+        public void Add(User user)
         {
 
             _userDal.Add(user);
-            return new SuccesResult(Messages.UserAdded);
 
 
         }
@@ -42,6 +41,18 @@ namespace Business.Concrete
         {
             return new SuccessDataResult<User>(_userDal.Get(u => u.Id == Id));
         }
+
+        public User GetByMail(string email)
+        {
+            return _userDal.Get(u => u.Email == email);
+
+        }
+
+        public List<OperationClaim> GetClaims(User user)
+        {
+            return _userDal.GetClaims(user);
+        }
+
         [ValidationAspect(typeof(UserValidator))]
 
         public IResult Update(User user)
