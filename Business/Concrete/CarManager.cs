@@ -1,7 +1,9 @@
 ﻿using Business.Abstract;
 using Business.Constants;
 using Business.ValidationRules;
+using Core.Aspects.Autofac.Caching;
 using Core.Aspects.Autofac.Validation;
+using Core.CrossCuttingConserns.Caching;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
@@ -36,12 +38,13 @@ namespace Business.Concrete
             _carDal.Delete(car);
             return new SuccesResult("Araba Silindi");
         }
-
+        [CacheAspect]
         public IDataResult<List<Car>> GetAll()
         {
+            
             return new SuccessDataResult<List<Car>>(_carDal.GetAll());
         }
-
+        [CacheAspect]
         public IDataResult<Car> GetById(int Id)
         {
             return new SuccessDataResult<Car>(_carDal.Get(c=>c.Id==Id));
